@@ -737,8 +737,8 @@ section h2 {
 
 /* Container for carousel images - matches the old placeholder dimensions */
 .carousel-image-container {
-    width: 600px;
-    height: 350px;
+    width: 282px;
+    height: 236px;
     background: linear-gradient(135deg, var(--secondary-bg), #2a2a2a);
     border: 2px solid var(--accent-color);
     border-radius: 8px;
@@ -788,5 +788,6 @@ section h2 {
     }
 }
 }
+
 
 
