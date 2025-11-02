@@ -103,8 +103,8 @@ body {
 .product-carousel {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 400px;
+    max-width: 282px;
+    height: 362px;
 }
 
 .carousel-track {
@@ -788,4 +788,5 @@ section h2 {
     }
 }
 }
+
 
