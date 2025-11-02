@@ -24,16 +24,86 @@
         <div class="product-carousel">
             <div class="carousel-track">
                 <div class="product-slide active">
-                    <img src="assets/images/velocitoaster.png" alt="VelociToast-Prime" class="product-image">
+                    <div class="carousel-image-container">
+                        <img src="assets/images/velocitoaster.png" alt="VelociToast-Prime" class="carousel-product-image">
+                    </div>
                     <span class="product-label">VelociToast-Prime™</span>
                 </div>
                 <div class="product-slide">
-                    <img src="assets/images/sous-saber.png" alt="Sous-Vide Saber" class="product-image">
+                    <div class="carousel-image-container">
+                        <img src="assets/images/sous-saber.png" alt="Sous-Vide Saber" class="carousel-product-image">
+                    </div>
                     <span class="product-label">Sous-Vide Saber™</span>
                 </div>
                 <div class="product-slide">
-                    <img src="assets/images/enterprise-grill.png" alt="WarpGrill NX-01" class="product-image">
+                    <div class="carousel-image-container">
+                        <img src="assets/images/enterprise-grill.png" alt="WarpGrill NX-01" class="carousel-product-image">
+                    </div>
                     <span class="product-label">WarpGrill NX-01™</span>
+                </div>
+                <div class="product-slide">
+                    <div class="carousel-image-container">
+                        <img src="assets/images/t1000-mixer.png" alt="T-1000 Mixer" class="carousel-product-image">
+                    </div>
+                    <span class="product-label">T-1000 Mixer™</span>
+                </div>
+                <div class="product-slide">
+                    <div class="carousel-image-container">
+                        <img src="assets/images/nostromo-fryer.png" alt="Nostromo Deep Fryer" class="carousel-product-image">
+                    </div>
+                    <span class="product-label">Nostromo Deep Fryer™</span>
+                </div>
+                <div class="product-slide">
+                    <div class="carousel-image-container">
+                        <img src="assets/images/hal9000-fridge.png" alt="HAL-9000 Smart Fridge" class="carousel-product-image">
+                    </div>
+                    <span class="product-label">HAL-9000 Smart Fridge™</span>
+                </div>
+            </div>
+            
+            <!-- Carousel indicators -->
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+
+        <!-- Enter button -->
+        <button class="enter-btn" onclick="window.location.href='catalog.html'">
+            <span class="btn-text">ENTER CATALOG</span>
+            <span class="btn-glow"></span>
+        </button>
+
+        <!-- Footer -->
+        <div class="landing-footer">
+            <p>MuseCAD Consumer Appliance Division | A MuseSys Company</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple carousel rotation
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.product-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        function rotateCarousel() {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+        
+        setInterval(rotateCarousel, 4000);
+    </script>
+</body>
+</html>
                 </div>
                 <div class="product-slide">
                     <img src="assets/images/t1000-mixer.png" alt="T-1000 Mixer" class="product-image">
