@@ -730,4 +730,62 @@ section h2 {
     .catalog-header h1 {
         font-size: 2.5rem;
     }
+   /* ============================================
+   CAROUSEL IMAGE STYLING
+   Add this to your style.css
+   ============================================ */
+
+/* Container for carousel images - matches the old placeholder dimensions */
+.carousel-image-container {
+    width: 600px;
+    height: 350px;
+    background: linear-gradient(135deg, var(--secondary-bg), #2a2a2a);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
+    overflow: hidden;
+    position: relative;
 }
+
+/* Actual product images - constrained and centered */
+.carousel-product-image {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Adjust product label to sit below the image container */
+.product-slide {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-label {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    letter-spacing: 3px;
+    font-weight: 300;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .carousel-image-container {
+        width: 90vw;
+        max-width: 500px;
+        height: 300px;
+    }
+    
+    .product-label {
+        font-size: 1.2rem;
+    }
+}
+}
+
