@@ -506,6 +506,193 @@ section h2 {
 }
 
 /* ============================================
+   CATALOG PAGE STYLES
+   ============================================ */
+
+.catalog-header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(180deg, var(--secondary-bg), var(--primary-bg));
+}
+
+.catalog-header h1 {
+    font-size: 3.5rem;
+    color: var(--chrome);
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+
+.catalog-tagline {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 300;
+}
+
+.series-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.series-intro p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Product grid */
+.product-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    position: relative;
+    background: var(--secondary-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Color-coded borders per sub-series */
+.product-card.jurassic { border-color: #7cb342; }
+.product-card.jurassic:hover { box-shadow: 0 12px 40px rgba(124, 179, 66, 0.3); }
+
+.product-card.galactic { border-color: #00a8ff; }
+.product-card.galactic:hover { box-shadow: 0 12px 40px rgba(0, 168, 255, 0.3); }
+
+.product-card.federation { border-color: #0078d7; }
+.product-card.federation:hover { box-shadow: 0 12px 40px rgba(0, 120, 215, 0.3); }
+
+.product-card.terminator { border-color: #90a4ae; }
+.product-card.terminator:hover { box-shadow: 0 12px 40px rgba(144, 164, 174, 0.3); }
+
+.product-card.weyland { border-color: #ffc107; }
+.product-card.weyland:hover { box-shadow: 0 12px 40px rgba(255, 193, 7, 0.3); }
+
+.product-card.odyssey { border-color: #d32f2f; }
+.product-card.odyssey:hover { box-shadow: 0 12px 40px rgba(211, 47, 47, 0.3); }
+
+.product-card-image {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-placeholder {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+}
+
+.product-card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-series {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.product-card-title {
+    font-size: 1.8rem;
+    color: var(--chrome);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.product-card-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.product-card-tagline {
+    font-size: 1.05rem;
+    color: var(--accent-color);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.product-model-code {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.hover-reveal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .hover-reveal {
+    transform: translateY(0);
+}
+
+/* Catalog footer note */
+.catalog-footer-note {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: var(--secondary-bg);
+    border-left: 4px solid var(--accent-color);
+}
+
+.catalog-footer-note p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+}
+
+.design-credit {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -534,5 +721,13 @@ section h2 {
     
     .specs-grid, .features-list {
         grid-template-columns: 1fr;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-header h1 {
+        font-size: 2.5rem;
     }
 }
