@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="landing">
+    <nav class="site-nav">
+        <a href="index.html" class="nav-logo">MuseCAD</a>
+        <div class="nav-links">
+            <a href="catalog.html">Phase I Catalog</a>
+            <a href="Products/Phase2/catalog_phase2.html">Phase II Catalog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
     <!-- Background ambient effect -->
     <div class="ambient-grid"></div>
     
@@ -32,30 +41,7 @@
                 <div class="product-slide">
                     <div class="carousel-image-container">
                         <img src="assets/images/sous-saber.png" alt="Sous-Vide Saber" class="carousel-product-image">
-                    </div>
-                    <span class="product-label">Sous-Vide Saber™</span>
-                </div>
-                <div class="product-slide">
-                    <div class="carousel-image-container">
-                        <img src="assets/images/enterprise-grill.png" alt="WarpGrill NX-01" class="carousel-product-image">
-                    </div>
-                    <span class="product-label">WarpGrill NX-01™</span>
-                </div>
-                <div class="product-slide">
-                    <div class="carousel-image-container">
-                        <img src="assets/images/t1000-mixer.png" alt="T-1000 Mixer" class="carousel-product-image">
-                    </div>
-                    <span class="product-label">T-1000 Mixer™</span>
-                </div>
-                <div class="product-slide">
-                    <div class="carousel-image-container">
-                        <img src="assets/images/nostromo-fryer.png" alt="Nostromo Deep Fryer" class="carousel-product-image">
-                    </div>
-                    <span class="product-label">Nostromo Deep Fryer™</span>
-                </div>
-                <div class="product-slide">
-                    <div class="carousel-image-container">
-                        <img src="assets/images/hal9000-fridge.png" alt="HAL-9000 Smart Fridge" class="carousel-product-image">
+@@ -59,56 +68,65 @@
                     </div>
                     <span class="product-label">HAL-9000 Smart Fridge™</span>
                 </div>
@@ -81,11 +67,20 @@
                 <a href="catalog.html" class="cta-button">
                     Phase I: Culinary Anomalies
                 </a>
-                <a href="products/phase2/catalog_phase2.html" class="cta-button secondary">
+                <a href="Products/Phase2/catalog_phase2.html" class="cta-button secondary">
                     Phase II: Catastrophics Division
                 </a>
             </div>
         </div>
+
+        <section class="phase2-preview">
+            <h2>Now Serving Chaos: Phase II Catastrophics Division</h2>
+            <div class="preview-grid">
+                <a href="Products/Phase2/phase2_cerberus9.html">Cerberus-9</a>
+                <a href="Products/Phase2/phase2_cryobrew.html">CryoBrew-Prime</a>
+                <a href="Products/Phase2/phase2_searaphim.html">Searaphim Halo</a>
+            </div>
+        </section>
 
         <!-- Footer -->
         <div class="landing-footer">
@@ -112,4 +107,3 @@
         setInterval(rotateCarousel, 4000);
     </script>
 </body>
-</html>
