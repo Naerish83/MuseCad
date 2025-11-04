@@ -72,69 +72,20 @@
             </div>
         </div>
 
-        <!-- Enter button -->
-        <button class="enter-btn" onclick="window.location.href='catalog.html'">
-            <span class="btn-text">ENTER CATALOG</span>
-            <span class="btn-glow"></span>
-        </button>
-
-        <!-- Footer -->
-        <div class="landing-footer">
-            <p>MuseCAD Consumer Appliance Division | A MuseSys Company</p>
-        </div>
-    </div>
-
-    <script>
-        // Simple carousel rotation
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.product-slide');
-        const indicators = document.querySelectorAll('.indicator');
-        
-        function rotateCarousel() {
-            slides[currentSlide].classList.remove('active');
-            indicators[currentSlide].classList.remove('active');
+        <!-- Hero Content with Dual Buttons -->
+        <div class="hero-content">
+            <h1>Engineering Impossibility Into Your Kitchen</h1>
+            <p>MuseCAD isn't just a brand; it's a monument to unnecessary innovation. Explore the appliances that science and good taste forgot.</p>
             
-            currentSlide = (currentSlide + 1) % slides.length;
-            
-            slides[currentSlide].classList.add('active');
-            indicators[currentSlide].classList.add('active');
-        }
-        
-        setInterval(rotateCarousel, 4000);
-    </script>
-</body>
-</html>
-                </div>
-                <div class="product-slide">
-                    <img src="assets/images/t1000-mixer.png" alt="T-1000 Mixer" class="product-image">
-                    <span class="product-label">T-1000 Mixer™</span>
-                </div>
-                <div class="product-slide">
-                    <img src="assets/images/nostromo-fryer.png" alt="Nostromo Deep Fryer" class="product-image">
-                    <span class="product-label">Nostromo Deep Fryer™</span>
-                </div>
-                <div class="product-slide">
-                    <img src="assets/images/hal9000-fridge.png" alt="HAL-9000 Smart Fridge" class="product-image">
-                    <span class="product-label">HAL-9000 Smart Fridge™</span>
-                </div>
-            </div>
-            
-            <!-- Carousel indicators -->
-            <div class="carousel-indicators">
-                <span class="indicator active"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
+            <div class="button-group">
+                <a href="catalog.html" class="cta-button">
+                    Phase I: Culinary Anomalies
+                </a>
+                <a href="products/phase2/catalog_phase2.html" class="cta-button secondary">
+                    Phase II: Catastrophics Division
+                </a>
             </div>
         </div>
-
-        <!-- Enter button -->
-        <button class="enter-btn" onclick="window.location.href='catalog.html'">
-            <span class="btn-text">ENTER CATALOG</span>
-            <span class="btn-glow"></span>
-        </button>
 
         <!-- Footer -->
         <div class="landing-footer">
