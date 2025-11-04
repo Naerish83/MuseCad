@@ -130,9 +130,10 @@ body {
     opacity: 1;
 }
 
-.product-image-placeholder {
-    width: 600px;
-    height: 350px;
+/* Carousel image styling */
+.carousel-image-container {
+    width: 282px;
+    height: 236px;
     background: linear-gradient(135deg, var(--secondary-bg), #2a2a2a);
     border: 2px solid var(--accent-color);
     border-radius: 8px;
@@ -140,13 +141,24 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-product-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    display: block;
 }
 
 .product-label {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--accent-color);
     letter-spacing: 3px;
     font-weight: 300;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
 }
 
 .carousel-indicators {
@@ -172,622 +184,52 @@ body {
     box-shadow: 0 0 10px var(--accent-color);
 }
 
-/* Enter button */
-.enter-btn {
-    position: relative;
+/* CTA Buttons */
+.cta-button {
     padding: 1.2rem 3rem;
     font-size: 1.1rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: var(--text-primary);
-    background: transparent;
-    border: 2px solid var(--accent-color);
+    background: var(--accent-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    overflow: hidden;
     transition: all 0.3s ease;
-    margin-bottom: 2rem;
 }
 
-.enter-btn:hover {
+.cta-button:hover {
+    background-color: var(--accent-secondary);
     color: var(--primary-bg);
-    border-color: var(--accent-secondary);
 }
 
-.btn-glow {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-    transition: left 0.5s ease;
+/* --- Add to bottom of style.css --- */
+
+/* Makes buttons sit side-by-side on desktop */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.enter-btn:hover .btn-glow {
-    left: 100%;
+/* This makes the Phase 2 button an "outline" style */
+/* So it doesn't compete with the main button */
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
-.btn-text {
-    position: relative;
-    z-index: 1;
+.cta-button.secondary:hover {
+    background-color: var(--accent-color);
+    color: #000;
 }
 
+/* Footer */
 .landing-footer {
     text-align: center;
     font-size: 0.85rem;
     color: var(--text-secondary);
+    margin-top: 2rem;
 }
-
-/* ============================================
-   PRODUCT PAGE STYLES
-   ============================================ */
-
-.product-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 4rem;
-    background: var(--secondary-bg);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--chrome);
-    text-decoration: none;
-    letter-spacing: 3px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-}
-
-/* Product hero section */
-.product-hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    padding: 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.hero-content {
-    padding: 2rem;
-}
-
-.product-category {
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-.product-name {
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--chrome);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
-}
-
-.product-subtitle {
-    font-size: 1.3rem;
-    color: var(--text-secondary);
-    font-weight: 300;
-}
-
-.hero-image-container {
-    padding: 2rem;
-}
-
-.hero-image-placeholder {
-    width: 100%;
-    height: 500px;
-    background: linear-gradient(135deg, var(--secondary-bg), #2a2a2a);
-    border: 2px solid var(--accent-color);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
-    color: var(--accent-color);
-    font-size: 1.2rem;
-}
-
-/* Content sections */
-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-section h2 {
-    font-size: 2.5rem;
-    color: var(--chrome);
-    margin-bottom: 2rem;
-    letter-spacing: 2px;
-}
-
-.product-overview p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-}
-
-.product-overview em {
-    color: var(--accent-color);
-    font-style: normal;
-}
-
-/* Specifications grid */
-.specs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.spec-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem;
-    background: var(--secondary-bg);
-    border-left: 3px solid var(--accent-color);
-    transition: transform 0.3s ease;
-}
-
-.spec-item:hover {
-    transform: translateX(5px);
-}
-
-.spec-label {
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-
-.spec-value {
-    color: var(--text-primary);
-    font-weight: 300;
-}
-
-/* Features list */
-.features-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.feature-item {
-    padding: 2rem;
-    background: var(--secondary-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.1);
-}
-
-.feature-item h3 {
-    color: var(--accent-color);
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-}
-
-.feature-item p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
-/* Safety warnings */
-.warning-box {
-    background: var(--secondary-bg);
-    border: 2px solid #ff6b00;
-    border-radius: 4px;
-    padding: 2rem;
-}
-
-.warning-box p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.7;
-}
-
-.warning-box strong {
-    color: #ff6b00;
-    font-weight: 700;
-}
-
-/* CTA Section */
-.product-cta {
-    text-align: center;
-    padding: 6rem 2rem;
-    background: linear-gradient(180deg, var(--primary-bg), var(--secondary-bg));
-}
-
-.product-cta h2 {
-    margin-bottom: 1rem;
-}
-
-.product-cta p {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-}
-
-.purchase-btn {
-    padding: 1.2rem 3rem;
-    font-size: 1.1rem;
-    letter-spacing: 3px;
-    color: var(--text-primary);
-    background: transparent;
-    border: 2px solid var(--accent-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.purchase-btn:hover {
-    background: var(--accent-color);
-    color: var(--primary-bg);
-}
-
-.cta-subtext {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-/* Footer */
-.product-footer {
-    background: var(--secondary-bg);
-    border-top: 1px solid var(--border-color);
-    padding: 3rem 2rem;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-}
-
-.footer-brand h3 {
-    color: var(--chrome);
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-}
-
-.footer-brand p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-}
-
-.footer-legal p {
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-}
-
-/* ============================================
-   CATALOG PAGE STYLES
-   ============================================ */
-
-.catalog-header {
-    text-align: center;
-    padding: 4rem 2rem 2rem;
-    background: linear-gradient(180deg, var(--secondary-bg), var(--primary-bg));
-}
-
-.catalog-header h1 {
-    font-size: 3.5rem;
-    color: var(--chrome);
-    letter-spacing: 4px;
-    margin-bottom: 1rem;
-}
-
-.catalog-tagline {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    font-weight: 300;
-}
-
-.series-intro {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-.series-intro p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    font-style: italic;
-}
-
-/* Product grid */
-.product-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2.5rem;
-}
-
-.product-card {
-    position: relative;
-    background: var(--secondary-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-}
-
-/* Color-coded borders per sub-series */
-.product-card.jurassic { border-color: #7cb342; }
-.product-card.jurassic:hover { box-shadow: 0 12px 40px rgba(124, 179, 66, 0.3); }
-
-.product-card.galactic { border-color: #00a8ff; }
-.product-card.galactic:hover { box-shadow: 0 12px 40px rgba(0, 168, 255, 0.3); }
-
-.product-card.federation { border-color: #0078d7; }
-.product-card.federation:hover { box-shadow: 0 12px 40px rgba(0, 120, 215, 0.3); }
-
-.product-card.terminator { border-color: #90a4ae; }
-.product-card.terminator:hover { box-shadow: 0 12px 40px rgba(144, 164, 174, 0.3); }
-
-.product-card.weyland { border-color: #ffc107; }
-.product-card.weyland:hover { box-shadow: 0 12px 40px rgba(255, 193, 7, 0.3); }
-
-.product-card.odyssey { border-color: #d32f2f; }
-.product-card.odyssey:hover { box-shadow: 0 12px 40px rgba(211, 47, 47, 0.3); }
-
-.product-card-image {
-    width: 100%;
-    height: 280px;
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.product-placeholder {
-    font-size: 1.3rem;
-    color: var(--text-secondary);
-    letter-spacing: 2px;
-}
-
-.product-card-content {
-    padding: 2rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-series {
-    font-size: 0.75rem;
-    color: var(--accent-color);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-}
-
-.product-card-title {
-    font-size: 1.8rem;
-    color: var(--chrome);
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-}
-
-.product-card-subtitle {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.4;
-}
-
-.product-card-tagline {
-    font-size: 1.05rem;
-    color: var(--accent-color);
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.product-model-code {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-family: 'Courier New', monospace;
-    letter-spacing: 1px;
-}
-
-.hover-reveal {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: var(--accent-color);
-    color: var(--primary-bg);
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 2px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover .hover-reveal {
-    transform: translateY(0);
-}
-
-/* Catalog footer note */
-.catalog-footer-note {
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 2rem;
-    background: var(--secondary-bg);
-    border-left: 4px solid var(--accent-color);
-}
-
-.catalog-footer-note p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 0.8rem;
-}
-
-.design-credit {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
-}
-
-.nav-links a.active {
-    color: var(--accent-color);
-}
-
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-@media (max-width: 768px) {
-    .brand-name {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
-    }
-    
-    .product-hero {
-        grid-template-columns: 1fr;
-        padding: 2rem;
-    }
-    
-    .product-name {
-        font-size: 2.5rem;
-    }
-    
-    .product-nav {
-        padding: 1rem 2rem;
-    }
-    
-    .nav-links {
-        gap: 1rem;
-    }
-    
-    .specs-grid, .features-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .catalog-header h1 {
-        font-size: 2.5rem;
-    }
-   /* ============================================
-   CAROUSEL IMAGE STYLING
-   Add this to your style.css
-   ============================================ */
-
-/* Container for carousel images - matches the old placeholder dimensions */
-.carousel-image-container {
-    width: 282px;
-    height: 236px;
-    background: linear-gradient(135deg, var(--secondary-bg), #2a2a2a);
-    border: 2px solid var(--accent-color);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
-    overflow: hidden;
-    position: relative;
-}
-
-/* Actual product images - constrained and centered */
-.carousel-product-image {
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-/* Adjust product label to sit below the image container */
-.product-slide {
-    flex-direction: column;
-    gap: 20px;
-}
-
-.product-label {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    letter-spacing: 3px;
-    font-weight: 300;
-    text-align: center;
-    text-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .carousel-image-container {
-        width: 90vw;
-        max-width: 500px;
-        height: 300px;
-    }
-    
-    .product-label {
-        font-size: 1.2rem;
-    }
-}
-}
-
-
-
