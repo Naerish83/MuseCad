@@ -990,3 +990,74 @@ body {
     border-color: #87CEEB;
     box-shadow: 0 10px 40px rgba(135, 206, 235, 0.3);
 }
+/* ============================================
+   PHASE II CATASTROPHICS - CUSTOM HOVER THEMES
+   Add these to the bottom of your style.css
+   ============================================ */
+
+/* Phase II Sub-Series Color Themes */
+
+/* 1. CryoBrew-Prime - Arctic Cyan */
+.product-card.arctic:hover {
+    border-color: #5AC8FA;
+    box-shadow: 0 10px 40px rgba(90, 200, 250, 0.3);
+}
+
+/* 2. Searaphim - Divine Gold */
+.product-card.halo:hover {
+    border-color: #FFD166;
+    box-shadow: 0 10px 40px rgba(255, 209, 102, 0.3);
+}
+
+/* 3. RepliK8 - Starfleet Platinum */
+.product-card.replicator:hover {
+    border-color: #B0C4DE;
+    box-shadow: 0 10px 40px rgba(176, 196, 222, 0.3);
+}
+
+/* 4. ToastRaider - War-Bronze */
+.product-card.raider:hover {
+    border-color: #C17F3F;
+    box-shadow: 0 10px 40px rgba(193, 127, 63, 0.3);
+}
+
+/* 5. Omegalux - Solar White */
+.product-card.omega:hover {
+    border-color: #FFF7B0;
+    box-shadow: 0 10px 40px rgba(255, 247, 176, 0.3);
+}
+
+/* 6. SteamWeaver - Verdant Teal */
+.product-card.weaver:hover {
+    border-color: #00BFA5;
+    box-shadow: 0 10px 40px rgba(0, 191, 165, 0.3);
+}
+
+/* 7. ChronoSpatula - Temporal Violet */
+.product-card.chrono:hover {
+    border-color: #9B59B6;
+    box-shadow: 0 10px 40px rgba(155, 89, 182, 0.3);
+}
+
+/* 8. Cerberus-9 - Infernal Crimson */
+.product-card.cerberus:hover {
+    border-color: #C0392B;
+    box-shadow: 0 10px 40px rgba(192, 57, 43, 0.3);
+}
+
+/* 9. VibeWrench - Psycho-Magenta */
+.product-card.vibewrench:hover {
+    border-color: #D36BF4;
+    box-shadow: 0 10px 40px rgba(211, 107, 244, 0.3);
+}
+
+/* 10. Intrinsic Field Generator - Quantum Purple */
+.product-card.intrinsic:hover {
+    border-color: #7E57C2;
+    box-shadow: 0 10px 40px rgba(126, 87, 194, 0.3);
+}
+
+/* ============================================
+   END PHASE II THEMES
+   ============================================ */
+
