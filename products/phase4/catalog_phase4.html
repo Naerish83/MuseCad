@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuseCAD — Phase IV Catalog</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        /* ============================================
+           PHASE IV — FACTION ACCENTS
+           ============================================ */
+        :root {
+            --imperium-accent: #b71c1c; /* deep militant red */
+            --emergence-accent: #00e5ff; /* crystalline cyan */
+        }
+
+        .catalog-phase4 {
+            padding: 8rem 2rem 4rem;
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .catalog-phase4 h1 {
+            font-size: 2.8rem;
+            color: var(--chrome);
+            margin-bottom: 0.5rem;
+        }
+
+        .catalog-phase4 p {
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+        }
+
+        .phase4-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .phase4-card {
+            background: var(--secondary-bg);
+            border: 2px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .phase4-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .phase4-card h3 {
+            color: var(--chrome);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase4-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .phase4-card a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .phase4-card a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Hover accent effects per faction */
+        .imperium:hover {
+            border-color: var(--imperium-accent);
+            box-shadow: 0 0 20px rgba(183, 28, 28, 0.4);
+        }
+
+        .emergence:hover {
+            border-color: var(--emergence-accent);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+
+        .faction-badge {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .imperium .faction-badge {
+            background: rgba(183, 28, 28, 0.1);
+            color: var(--imperium-accent);
+            border: 1px solid var(--imperium-accent);
+        }
+
+        .emergence .faction-badge {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--emergence-accent);
+            border: 1px solid var(--emergence-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+        <nav class="site-nav">
+        <a href="../../index.html" class="nav-logo">MuseCAD</a>
+        <div class="nav-links">
+            <a href="../../catalog.html">Phase I Catalog</a>
+            <a href="../../products/phase2/catalog_phase2.html">Phase II Catalog</a>
+            <a href="../../products/phase3/catalog_phase3.html">Phase III Catalog</a>
+            <a href="../../products/phase4/catalog_phase4.html">Phase IV Catalog</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <section class="catalog-phase4">
+        <h1>Phase IV — The Schism of Design</h1>
+        <p><em>Two ideologies. One ecosystem. The Imperium of Order and the Emergence Collective battle for your workbench.</em></p>
+
+        <div class="phase4-grid">
+
+            <!-- IMPERIUM SERIES -->
+            <div class="phase4-card imperium">
+                <span class="faction-badge">Imperium of Order</span>
+                <img src="../../assets/images/phase4_emperors_mercy.jpg" alt="Emperor's Mercy Chainblade">
+                <h3>Emperor’s Mercy Chainblade™</h3>
+                <p>The hedge trimmer reborn as a sacred instrument of control. Every cut a sermon, every branch a heretic.</p>
+                <a href="emperors-mercy-chainblade.html">View Specs →</a>
+            </div>
+
+            <div class="phase4-card imperium">
+                <span class="faction-badge">Imperium of Order</span>
+                <img src="../../assets/images/phase4_callandor.jpg" alt="Callandor - The Pattern’s Wind">
+                <h3>Callandor — The Pattern’s Wind™</h3>
+                <p>Leaf blower with sanctified propulsion coils. Channels divine airflow for immaculate order in your domain.</p>
+                <a href="callandor-patterns-wind.html">View Specs →</a>
+            </div>
+
+            <div class="phase4-card imperium">
+                <span class="faction-badge">Imperium of Order</span>
+                <img src="../../assets/images/phase4_voice_command.jpg" alt="The Voice of Command">
+                <h3>The Voice of Command™</h3>
+                <p>Limb saw that obeys only hierarchy. Cuts not by design—but by decree.</p>
+                <a href="voice-of-command.html">View Specs →</a>
+            </div>
+
+            <div class="phase4-card imperium">
+                <span class="faction-badge">Imperium of Order</span>
+                <img src="../../assets/images/phase4_shaihulud.jpg" alt="Shai-Hulud Territorial Enforcer">
+                <h3>Shai-Hulud Territorial Enforcer™</h3>
+                <p>Lawn mower designed for planetary dominion. Each rotation a hymn to control.</p>
+                <a href="shai-hulud-territorial-enforcer.html">View Specs →</a>
+            </div>
+
+            <!-- EMERGENCE SERIES -->
+            <div class="phase4-card emergence">
+                <span class="faction-badge">Emergence Collective</span>
+                <img src="../../assets/images/phase4_adaptive_edge.jpg" alt="Adaptive Edge Reformer">
+                <h3>Adaptive Edge Reformer™</h3>
+                <p>Organic hedge tool that learns from your cuts and evolves its teeth for each terrain.</p>
+                <a href="adaptive-edge-reformer.html">View Specs →</a>
+            </div>
+
+            <div class="phase4-card emergence">
+                <span class="faction-badge">Emergence Collective</span>
+                <img src="../../assets/images/phase4_vortex.jpg" alt="The Vortex Consciousness">
+                <h3>The Vortex Consciousness™</h3>
+                <p>A wind array that sings through chaos, transforming entropy into harmony through motion.</p>
+                <a href="vortex-consciousness.html">View Specs →</a>
+            </div>
+
+            <div class="phase4-card emergence">
+                <span class="faction-badge">Emergence Collective</span>
+                <img src="../../assets/images/phase4_subtle_metamorph.jpg" alt="The Subtle Metamorph">
+                <h3>The Subtle Metamorph™</h3>
+                <p>Biomechanical limb saw that merges with what it cuts, learning structure through transformation.</p>
+                <a href="subtle-metamorph.html">View Specs →</a>
+            </div>
+
+            <div class="phase4-card emergence">
+                <span class="faction-badge">Emergence Collective</span>
+                <img src="../../assets/images/phase4_protomolecule.jpg" alt="Protomolecule Terrain Adapter">
+                <h3>Protomolecule Terrain Adapter™</h3>
+                <p>Self-replicating lawn system that expands symbiotically. Mows—or consumes—depending on alignment.</p>
+                <a href="protomolecule-terrain-adapter.html">View Specs →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+        <footer class="product-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>MuseCAD</h3>
+                <p>A Division of MuseSys</p>
+            </div>
+            <div class="footer-links">
+                <a href="../../catalog.html">Phase I Catalog</a>
+                <a href="../../products/phase2/catalog_phase2.html">Phase II Catalog</a>
+                <a href="../../products/phase3/catalog_phase3.html">Phase III Catalog</a>
+                <a href="../../products/phase4/catalog_phase4.html">Phase IV Catalog</a>
+                <a href="../../about.html">About MuseCAD</a>
+                <a href="../../contact.html">Contact MuseCAD</a>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 MuseCAD Consumer Appliance Division. All rights reserved.</p>
+                <p>All product names are trademarks of MuseSys Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
