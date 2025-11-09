@@ -223,9 +223,9 @@ Each product page should include the following sections in this order:
     <a href="../../index.html" class="nav-logo">MuseCAD</a>
     <div class="nav-links">
         <a href="../../catalog.html">Phase I Catalog</a>
-        <a href="../Phase2/catalog_phase2.html">Phase II Catalog</a>
-        <a href="../Phase3/catalog_phase3.html">Phase III Catalog</a>
-        <a href="catalog_phase4.html">Phase IV Catalog</a>
+          <a href="../phase2/catalog_phase2.html">Phase II Catalog</a>
+          <a href="../phase3/catalog_phase3.html">Phase III Catalog</a>
+          <a href="catalog_phase4.html">Phase IV Catalog</a>
         <a href="../../about.html">About</a>
         <a href="../../contact.html">Contact</a>
     </div>
@@ -415,8 +415,8 @@ Standard "Coming Soon" or purchase section
         </div>
         <div class="footer-links">
             <a href="../../catalog.html">Phase I Catalog</a>
-            <a href="../Phase2/catalog_phase2.html">Phase II Catalog</a>
-            <a href="../Phase3/catalog_phase3.html">Phase III Catalog</a>
+            <a href="../phase2/catalog_phase2.html">Phase II Catalog</a>
+            <a href="../phase3/catalog_phase3.html">Phase III Catalog</a>
             <a href="catalog_phase4.html">Phase IV Catalog</a>
             <a href="../../about.html">About MuseCAD</a>
             <a href="../../contact.html">Contact MuseCAD</a>
