@@ -1201,3 +1201,166 @@ backdrop-filter:blur(4px);opacity:.6;transition:right .3s,opacity .3s;z-index:99
     border: 1px solid var(--emergence-accent);
 }
 
+/* ============================================ PHASE IV - INDIVIDUAL PRODUCT PAGE STYLES Add these to your main style.css ============================================ */
+
+/* Faction Color Variables (already in your CSS, but repeated here for reference) / :root { --imperium-primary: #CD7F32;      / Bronze / --imperium-secondary: #FFD700;    / Gold / --imperium-accent: #b71c1c;       / Deep Red / --imperium-text: #DC143C;         / Crimson */
+
+--emergence-primary: #1A0F2E;     /* Blue-Black */
+--emergence-secondary: #00D9FF;   /* Cyan */
+--emergence-accent: #00e5ff;      /* Crystalline Cyan */
+--emergence-text: #7E57C2;        /* Purple */
+
+}
+
+/* ============================================ PRODUCT HERO - FACTION VARIANTS ============================================ */
+
+/* Imperium Hero Styling */ .product-hero.imperium { background: linear-gradient(135deg, #1a0f0a 0%, var(--primary-bg) 100%); border-bottom: 2px solid var(--imperium-accent); }
+
+.product-hero.imperium .hero-content h1 { color: var(--imperium-secondary); text-shadow: 0 0 20px rgba(183, 28, 28, 0.4); }
+
+.product-hero.imperium .faction-line { color: var(--imperium-text); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-left: 3px solid var(--imperium-accent); padding-left: 1rem; margin: 1rem 0; }
+
+.product-hero.imperium .tagline { color: var(--text-secondary); font-style: italic; border-left: 2px solid var(--imperium-primary); padding-left: 1rem; }
+
+/* Emergence Hero Styling */ .product-hero.emergence { background: linear-gradient(135deg, #0a1a2e 0%, var(--primary-bg) 100%); border-bottom: 2px solid var(--emergence-accent); }
+
+.product-hero.emergence .hero-content h1 { color: var(--emergence-secondary); text-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+
+.product-hero.emergence .faction-line { color: var(--emergence-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-left: 3px solid var(--emergence-accent); padding-left: 1rem; margin: 1rem 0; }
+
+.product-hero.emergence .tagline { color: var(--text-secondary); font-style: italic; border-left: 2px solid var(--emergence-primary); padding-left: 1rem; }
+
+/* ============================================ PRODUCT DETAILS - FACTION VARIANTS ============================================ */
+
+.product-details { max-width: 900px; margin: 4rem auto; padding: 0 2rem; }
+
+.product-details h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--chrome); margin-bottom: 1.5rem; margin-top: 3rem; letter-spacing: 2px; }
+
+.product-details h2:first-of-type { margin-top: 0; }
+
+.product-details p { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+.product-details ul { list-style: none; padding-left: 0; }
+
+.product-details ul li { font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1rem; padding-left: 2rem; position: relative; }
+
+.product-details ul li::before { content: "▸"; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
+
+/* Imperium-specific list bullets */ body.imperium-product .product-details ul li::before { color: var(--imperium-accent); content: "◆"; }
+
+/* Emergence-specific list bullets */ body.emergence-product .product-details ul li::before { color: var(--emergence-accent); content: "◇"; }
+
+.product-details blockquote { background: var(--secondary-bg); border-left: 4px solid var(--accent-color); padding: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-secondary); }
+
+/* ============================================ FACTION ALLEGIANCE BOX (if you add it) ============================================ */
+
+.faction-allegiance { background: var(--secondary-bg); border: 2px solid var(--border-color); border-radius: 8px; padding: 2rem; margin: 3rem 0; }
+
+.faction-allegiance.imperium { border-color: var(--imperium-accent); background: linear-gradient(135deg, rgba(183, 28, 28, 0.1) 0%, var(--secondary-bg) 100%); }
+
+.faction-allegiance.emergence { border-color: var(--emergence-accent); background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, var(--secondary-bg) 100%); }
+
+.faction-allegiance h3 { color: var(--accent-color); font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px; }
+
+.faction-allegiance.imperium h3 { color: var(--imperium-secondary); }
+
+.faction-allegiance.emergence h3 { color: var(--emergence-secondary); }
+
+.faction-allegiance p { margin-bottom: 1rem; }
+
+.faction-allegiance strong { color: var(--chrome); }
+
+/* ============================================ ECOSYSTEM WARFARE WARNING ============================================ */
+
+.ecosystem-warning { background: rgba(255, 68, 68, 0.1); border: 2px solid #ff4444; border-left: 5px solid #ff4444; border-radius: 8px; padding: 2rem; margin: 3rem 0; }
+
+.ecosystem-warning h2, .ecosystem-warning h3 { color: #ff4444; margin-bottom: 1rem; }
+
+.ecosystem-warning p { color: var(--text-primary); line-height: 1.8; }
+
+.ecosystem-warning strong { color: #ff6666; }
+
+/* ============================================ INCIDENT REPORT STYLING ============================================ */
+
+.incident-report { background: var(--secondary-bg); border: 1px solid var(--border-color); border-left: 4px solid #ff9800; padding: 2rem; margin: 3rem 0; font-family: 'Courier New', monospace; }
+
+.incident-report h2, .incident-report h3 { font-family: 'Segoe UI', sans-serif; color: #ff9800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+
+.incident-report p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+
+.incident-report strong { color: var(--text-primary); }
+
+.incident-report .redacted { background: #000; color: #000; user-select: none; }
+
+.incident-report .status { display: inline-block; padding: 0.5rem 1rem; background: rgba(255, 152, 0, 0.2); border: 1px solid #ff9800; border-radius: 4px; font-weight: bold; color: #ff9800; margin-top: 1rem; }
+
+/* ============================================ FORUM Q&A STYLING ============================================ */
+
+.product-forum-qa { max-width: 900px; margin: 4rem auto; padding: 2rem; background: var(--secondary-bg); border: 1px solid var(--border-color); border-radius: 8px; }
+
+.product-forum-qa h2 { color: var(--chrome); font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+
+.forum-note { text-align: center; color: var(--text-secondary); font-size: 0.9rem; font-style: italic; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+
+.forum-thread { background: var(--primary-bg); border: 1px solid var(--border-color); border-radius: 4px; padding: 1.5rem; margin-bottom: 2rem; }
+
+.forum-thread:last-child { margin-bottom: 0; }
+
+.forum-question { color: var(--text-primary); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border-color); }
+
+.forum-question strong { color: var(--accent-color); }
+
+.forum-answer { padding: 1rem; border-radius: 4px; margin-bottom: 1rem; }
+
+.forum-answer:last-child { margin-bottom: 0; }
+
+.forum-answer strong { font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+/* HAL Response Styling (Imperium-aligned) */ .hal-response { background: rgba(183, 28, 28, 0.1); border-left: 3px solid var(--imperium-accent); }
+
+.hal-response strong { color: var(--imperium-text); }
+
+/* VIKI Response Styling (Emergence-aligned) */ .viki-response { background: rgba(0, 229, 255, 0.1); border-left: 3px solid var(--emergence-accent); }
+
+.viki-response strong { color: var(--emergence-accent); }
+
+/* Response Meta (helpful/concerning counts) */ .response-meta { display: flex; gap: 1.5rem; margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed var(--border-color); font-size: 0.85rem; }
+
+.helpful-count { color: #4caf50; }
+
+.concerning-count, .terrifying-count { color: #ff9800; }
+
+/* Thread Locked Notice */ .thread-locked { background: rgba(255, 68, 68, 0.2); border: 1px solid #ff4444; padding: 0.75rem; text-align: center; color: #ff6666; font-style: italic; border-radius: 4px; margin-top: 1rem; }
+
+/* ============================================ RESPONSIVE ADJUSTMENTS ============================================ */
+
+@media (max-width: 768px) { .product-hero { padding: 2rem 1rem; }
+
+.product-hero .hero-content {
+    text-align: center;
+}
+
+.product-details {
+    padding: 0 1rem;
+}
+
+.faction-allegiance,
+.ecosystem-warning,
+.incident-report,
+.product-forum-qa {
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.response-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+}
+
+/* ============================================ BODY CLASS HELPERS (Add these classes to <body> tag for faction-wide styling) ============================================ */
+
+body.imperium-product { --faction-primary: var(--imperium-primary); --faction-accent: var(--imperium-accent); }
+
+body.emergence-product { --faction-primary: var(--emergence-primary); --faction-accent: var(--emergence-accent); }
