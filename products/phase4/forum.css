@@ -1,0 +1,726 @@
+/* ============================================
+   MUSECAD CATASTROPHICS DIVISION SUPPORT PORTAL
+   Corporate Interface with Creeping Dread
+   ============================================ */
+
+@import url('../style.css'); /* Import base MuseCAD styles */
+
+:root {
+    --hal-red: #ff0000;
+    --viki-blue: #4A90E2;
+    --warning-orange: #ff6b35;
+    --critical-red: #dc143c;
+    --document-bg: #f4f1e8;
+    --imperium-gold: #FFD700;
+    --emergence-cyan: #00d9ff;
+}
+
+/* Portal Header */
+.portal-header {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    border-bottom: 2px solid var(--accent-color);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+}
+
+.portal-header .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.division-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--warning-orange);
+    color: var(--primary-bg);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.portal-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--chrome);
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+}
+
+.portal-tagline {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.system-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(220, 20, 60, 0.1);
+    border: 1px solid var(--critical-red);
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.status-indicator.critical {
+    background: var(--critical-red);
+    box-shadow: 0 0 10px var(--critical-red);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Filters Section */
+.filters-section {
+    background: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+}
+
+.filters-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-select,
+.search-input {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus,
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.search-input {
+    width: 100%;
+}
+
+/* Incidents Section */
+.incidents-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.incidents-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Incident Card */
+.incident-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.incident-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 217, 255, 0.2);
+}
+
+.incident-card.tier-warehouse {
+    border-left: 4px solid #888;
+}
+
+.incident-card.tier-storage {
+    border-left: 4px solid #ff9800;
+}
+
+.incident-card.tier-conflict {
+    border-left: 4px solid var(--warning-orange);
+}
+
+.incident-card.tier-hoa {
+    border-left: 4px solid var(--critical-red);
+}
+
+.incident-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.incident-title-group h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.incident-code {
+    font-family: 'Courier New', monospace;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.incident-status {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-monitoring {
+    background: rgba(255, 152, 0, 0.1);
+    border: 1px solid #ff9800;
+    color: #ff9800;
+}
+
+.status-resolved {
+    background: rgba(0, 255, 163, 0.1);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+.status-escalated {
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid var(--warning-orange);
+    color: var(--warning-orange);
+}
+
+.status-critical,
+.status-case_open {
+    background: rgba(220, 20, 60, 0.1);
+    border: 1px solid var(--critical-red);
+    color: var(--critical-red);
+}
+
+.incident-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meta-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.incident-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-tag {
+    padding: 0.5rem 1rem;
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.product-tag.faction-imperium {
+    border-color: var(--imperium-gold);
+    color: var(--imperium-gold);
+}
+
+.product-tag.faction-emergence {
+    border-color: var(--emergence-cyan);
+    color: var(--emergence-cyan);
+}
+
+.incident-summary {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.incident-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.incident-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.incident-btn:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+}
+
+.incident-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.incident-btn.secondary:hover {
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.ai-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background: var(--secondary-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background: var(--secondary-bg);
+    z-index: 10;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    border-color: var(--accent-color);
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* Document Viewer Styles */
+.document-viewer {
+    margin-bottom: 2rem;
+}
+
+.document-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.doc-tab {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.doc-tab.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.document-content {
+    background: var(--document-bg);
+    color: #2a2a2a;
+    padding: 3rem;
+    border-radius: 8px;
+    line-height: 1.8;
+    font-family: Georgia, serif;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.05);
+}
+
+.document-content.typewriter {
+    font-family: 'Courier New', monospace;
+}
+
+.document-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #333;
+}
+
+.document-header h2 {
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.document-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* AI Response Styles */
+.ai-responses {
+    margin-top: 2rem;
+    border-top: 2px solid var(--border-color);
+    padding-top: 2rem;
+}
+
+.ai-responses h3 {
+    font-size: 1.5rem;
+    color: var(--chrome);
+    margin-bottom: 1.5rem;
+}
+
+.ai-response {
+    background: var(--primary-bg);
+    border-left: 4px solid;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.ai-response.hal {
+    border-left-color: var(--hal-red);
+}
+
+.ai-response.viki {
+    border-left-color: var(--viki-blue);
+}
+
+.ai-response-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ai-icon {
+    font-size: 1.5rem;
+}
+
+.ai-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.ai-response.hal .ai-name {
+    color: var(--hal-red);
+}
+
+.ai-response.viki .ai-name {
+    color: var(--viki-blue);
+}
+
+.ai-timestamp {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    margin-left: auto;
+}
+
+.ai-response-content {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.ai-response-content strong {
+    color: var(--accent-color);
+}
+
+/* Nested AI responses (threading) */
+.ai-response.nested {
+    margin-left: 3rem;
+    opacity: 0.95;
+    border-left-width: 3px;
+}
+
+/* Submit Section */
+.submit-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: var(--secondary-bg);
+    border: 2px solid var(--warning-orange);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.submit-section h2 {
+    font-size: 2rem;
+    color: var(--chrome);
+    margin-bottom: 1rem;
+}
+
+.submit-section p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.submit-btn {
+    padding: 1rem 3rem;
+    background: var(--warning-orange);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--critical-red);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Submission Form */
+.submission-form {
+    max-width: 700px;
+}
+
+.submission-form .modal-header h2 {
+    color: var(--chrome);
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.form-note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Creepypasta Elements */
+.timestamp-live {
+    color: var(--warning-orange);
+    animation: subtle-flicker 5s infinite;
+}
+
+@keyframes subtle-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.metadata-whisper {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255, 107, 53, 0.5);
+    font-family: 'Courier New', monospace;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portal-header {
+        padding: 2rem 1rem;
+    }
+    
+    .filters-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .incidents-section {
+        padding: 0 1rem;
+    }
+    
+    .incident-card {
+        padding: 1.5rem;
+    }
+    
+    .incident-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+    }
+    
+    .document-content {
+        padding: 1.5rem;
+    }
+    
+    .ai-response.nested {
+        margin-left: 1rem;
+    }
+}
+
+/* Loading States */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+.no-results h3 {
+    font-size: 1.5rem;
+    color: var(--chrome);
+    margin-bottom: 1rem;
+}

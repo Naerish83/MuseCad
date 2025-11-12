@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuseCAD Catastrophics Division - Support Portal</title>
+    <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <a href="../index.html" class="nav-logo">MuseCAD</a>
+        <div class="nav-links">
+            <a href="../catalog.html">Phase I</a>
+            <a href="../Products/Phase2/catalog_phase2.html">Phase II</a>
+            <a href="../Products/Phase3/catalog_phase3.html">Phase III</a>
+            <a href="forum.html" class="active">Support Forum</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Portal Header -->
+    <header class="portal-header">
+        <div class="header-content">
+            <div class="division-badge">CATASTROPHICS DIVISION</div>
+            <h1>User Incidents & Field Reports</h1>
+            <p class="portal-tagline">Phase IV: Terraforming & Transformation — Ecosystem Warfare Documentation</p>
+            <div class="system-status">
+                <span class="status-indicator critical"></span>
+                <span class="status-text">System Status: MULTIPLE CRITICAL CASES ACTIVE</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <label>Tier:</label>
+                <select id="tierFilter" class="filter-select">
+                    <option value="all">All Tiers</option>
+                    <option value="WAREHOUSE">Warehouse</option>
+                    <option value="STORAGE">Storage/Delivery</option>
+                    <option value="CONFLICT">User Conflict</option>
+                    <option value="HOA_APOCALYPSE">HOA Apocalypse</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Faction:</label>
+                <select id="factionFilter" class="filter-select">
+                    <option value="all">All Factions</option>
+                    <option value="IMPERIUM">Imperium</option>
+                    <option value="EMERGENCE">Emergence</option>
+                    <option value="BOTH">Both</option>
+                    <option value="NEUTRAL">Neutral</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Status:</label>
+                <select id="statusFilter" class="filter-select">
+                    <option value="all">All Status</option>
+                    <option value="MONITORING">Monitoring</option>
+                    <option value="RESOLVED">Resolved</option>
+                    <option value="ESCALATED">Escalated</option>
+                    <option value="CRITICAL">Critical</option>
+                    <option value="CASE_OPEN">Case Open</option>
+                </select>
+            </div>
+            
+            <div class="filter-group search-group">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search incidents...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Incidents Container -->
+    <section class="incidents-section">
+        <div class="incidents-container" id="incidentsContainer">
+            <!-- Incidents will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Submit Experience CTA -->
+    <section class="submit-section">
+        <div class="submit-container">
+            <h2>Have You Experienced Ecosystem Warfare?</h2>
+            <p>Document your incident for review by the Catastrophics Division. HAL and V.I.K.I. will provide... differing perspectives.</p>
+            <button class="submit-btn" id="submitBtn">
+                <span>SUBMIT INCIDENT REPORT</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Incident Modal (for full reports) -->
+    <div class="modal" id="incidentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" id="modalClose">&times;</button>
+                <div class="modal-actions">
+                    <button class="action-btn" title="Print"><span>🖨️</span></button>
+                    <button class="action-btn" title="Share"><span>🔗</span></button>
+                    <button class="action-btn" title="Flag"><span>⚠️</span></button>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Submission Form Modal -->
+    <div class="modal" id="submissionModal">
+        <div class="modal-content submission-form">
+            <div class="modal-header">
+                <h2>Submit Incident Report</h2>
+                <button class="modal-close" id="submissionClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="incidentForm">
+                    <div class="form-group">
+                        <label>Your Name/Username:</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Location (City, State):</label>
+                        <input type="text" id="userLocation" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Products Involved:</label>
+                        <textarea id="userProducts" rows="2" placeholder="e.g., Shai-Hulud Territorial Enforcer™, Adaptive Edge Reformer™" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Incident Description:</label>
+                        <textarea id="userIncident" rows="8" placeholder="Describe what happened. Be specific about tool behavior, timeline, and any unusual phenomena..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Faction Alignment (if applicable):</label>
+                        <select id="userFaction">
+                            <option value="">Neutral/Undecided</option>
+                            <option value="IMPERIUM">Imperium</option>
+                            <option value="EMERGENCE">Emergence</option>
+                            <option value="MIXED">Mixed Equipment</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SUBMIT TO CATASTROPHICS DIVISION</button>
+                </form>
+                <p class="form-note">Note: Submissions are stored locally and may be reviewed for future catalog updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="product-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>MuseCAD</h3>
+                <p>Catastrophics Division — A MuseSys Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="../catalog.html">Phase I Catalog</a>
+                <a href="../Products/Phase2/catalog_phase2.html">Phase II Catalog</a>
+                <a href="../Products/Phase3/catalog_phase3.html">Phase III Catalog</a>
+                <a href="forum.html">Support Forum</a>
+                <a href="../about.html">About MuseCAD</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 MuseCAD Consumer Appliance Division. All rights reserved.</p>
+                <p>Catastrophics Division: "Engineering the Impossible, Containing the Consequences"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="forum.js"></script>
+</body>
+</html>
