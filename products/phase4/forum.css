@@ -3,7 +3,7 @@
    Corporate Interface with Creeping Dread
    ============================================ */
 
-@import url('../style.css'); /* Import base MuseCAD styles */
+@import url('../../assets/css/style.css'); /* Import base MuseCAD styles */
 
 :root {
     --hal-red: #ff0000;
