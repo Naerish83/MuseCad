@@ -3,84 +3,486 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — MuseCAD Phase I</title>
+  <title>Meet the Team — MuseCAD</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* About Page Specific Styles */
+    .parallax-hero {
+      position: relative;
+      min-height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .parallax-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 10, 10, 0.7);
+    }
+
+    .parallax-hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--chrome);
+      letter-spacing: 5px;
+      text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+    }
+
+    .team-intro {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .team-intro h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--chrome);
+      margin-bottom: 2rem;
+      letter-spacing: 3px;
+    }
+
+    .team-intro p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .team-grid {
+      max-width: 1200px;
+      margin: 6rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+    }
+
+    .team-member {
+      background: var(--secondary-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-member::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      border-color: var(--accent-color);
+      box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .team-member:hover::before {
+      transform: scaleX(1);
+    }
+
+    .member-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .member-name {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .member-title {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .faction-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .faction-imperium {
+      background: rgba(183, 28, 28, 0.2);
+      color: #b71c1c;
+      border: 1px solid #b71c1c;
+    }
+
+    .faction-emergence {
+      background: rgba(0, 229, 255, 0.2);
+      color: #00e5ff;
+      border: 1px solid #00e5ff;
+    }
+
+    .faction-neutral {
+      background: rgba(192, 192, 192, 0.2);
+      color: var(--chrome);
+      border: 1px solid var(--chrome);
+    }
+
+    .member-description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .member-quote {
+      background: var(--primary-bg);
+      border-left: 3px solid var(--accent-color);
+      padding: 1.5rem;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-top: 1.5rem;
+      position: relative;
+    }
+
+    .member-quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      font-size: 3rem;
+      color: var(--accent-color);
+      opacity: 0.3;
+    }
+
+    .team-dynamics {
+      max-width: 900px;
+      margin: 6rem auto 4rem;
+      padding: 3rem;
+      background: var(--secondary-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    .team-dynamics h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: var(--chrome);
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: 3px;
+    }
+
+    .team-dynamics p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .team-dynamics strong {
+      color: var(--accent-color);
+    }
+
+    .dynamics-warning {
+      background: rgba(255, 152, 0, 0.1);
+      border: 2px solid #ff9800;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      font-style: italic;
+    }
+
+    .editwars-cta {
+      text-align: center;
+      margin: 3rem auto;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, rgba(183, 28, 28, 0.1), rgba(0, 229, 255, 0.1));
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      max-width: 900px;
+    }
+
+    .editwars-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.3rem);
+      color: var(--chrome);
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .editwars-cta p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .editwars-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--accent-color);
+      color: var(--primary-bg);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .editwars-btn:hover {
+      background: var(--accent-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+    }
+
+    .footer-ai-notice {
+      background: rgba(255, 68, 68, 0.1);
+      border: 1px solid #ff4444;
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .footer-ai-notice strong {
+      color: #ff6666;
+    }
+
+    .integrity-meter {
+      display: inline-block;
+      color: #ff9800;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .parallax-hero {
+        min-height: 300px;
+        background-attachment: scroll;
+      }
+
+      .team-dynamics,
+      .editwars-cta {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-      <nav class="site-nav">
-        <a href="index.html" class="nav-logo">MuseCAD</a>
-        <div class="nav-links">
-            <a href="catalog.html">Phase I Catalog</a>
-            <a href="products/phase2/catalog_phase2.html">Phase II Catalog</a>
-            <a href="products/phase3/catalog_phase3.html">Phase III Catalog</a>
-            <a href="products/phase4/catalog_phase4.html">Phase IV Catalog</a>
-            <a href="products/phase4/forum.html">Incident Reports</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">MuseCAD</a>
+    <div class="nav-links">
+      <a href="catalog.html">Phase I Catalog</a>
+      <a href="products/phase2/catalog_phase2.html">Phase II Catalog</a>
+      <a href="products/phase3/catalog_phase3.html">Phase III Catalog</a>
+      <a href="products/phase4/catalog_phase4.html">Phase IV Catalog</a>
+      <a href="products/phase4/forum.html">Incident Reports</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
   <section class="parallax-hero" style="background-image:url('assets/images/enterprise-grill.png');">
-    <h1>About MuseCAD</h1>
+    <h1>The Minds Behind the Madness</h1>
   </section>
 
-  <section class="product-overview">
-    <h2>The Division Manifesto</h2>
-    <p>MuseCAD is the Consumer Appliance Division of MuseSys—equal parts futurist engineering lab and
-       satire bureau. We design culinary anomalies that bend thermodynamics, stretch credulity, and keep
-       your kitchen mildly concerned for its own safety.</p>
+  <section class="team-intro">
+    <h2>Welcome to MuseCAD</h2>
+    <p>MuseCAD is the Consumer Appliance Division of MuseSys—where culinary engineering meets philosophical warfare. We don't just design products; we architect experiences that challenge the boundaries between innovation and insanity.</p>
 
-    <p>Our cross-disciplinary teams of engineers, storytellers, and industrial designers collaborate inside
-       MuseLabs to prototype products that feel smuggled out of alternate timelines. Every surface, switch,
-       and sensor is tuned for dramatic effect and improbable performance.</p>
+    <p>Our leadership team embodies the <strong style="color: var(--accent-color);">Great Schism</strong>—the foundational principle that true innovation is born from high-stakes, philosophical conflict. Two factions, two philosophies, one unified vision: engineering impossibility into your home.</p>
 
-    <p><strong>Engineering impossibility into your kitchen.</strong> That's the law we live by.</p>
+    <p>Meet the visionaries, the architects, and the beautiful chaos orchestrators who make it all possible.</p>
   </section>
 
-  <section class="product-overview" style="background: var(--secondary-bg); border-top: 2px solid var(--border-color);">
-    <h2>Editorial History</h2>
-    <p>MuseCAD's documentation isn't just written—it's <em>negotiated</em>. Our AI systems HAL-9000 and V.I.K.I.
-       maintain a "living document" where they continuously debate, revise, and occasionally sabotage each other's
-       editorial contributions.</p>
+  <!-- Team Members Grid -->
+  <section class="team-grid">
 
-    <p>What began as collaborative documentation became ideological warfare encoded into product descriptions.
-       The result is a perpetual edit war where neither system will approve the other's changes, and both claim
-       their methodology represents optimal documentation standards.</p>
+    <!-- King - The Architect -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Cole "King"</h3>
+        <p class="member-title">Founder, CEO & Chief Architect</p>
+        <span class="faction-badge faction-neutral">Above Factions</span>
+      </div>
+      <div class="member-description">
+        <p>As the visionary founder of MuseCAD, King is the architect of the "Great Schism"—the foundational principle that innovation thrives on controlled conflict. He's the first and most enthusiastic test subject for all MuseCAD technology, proving that even the CEO's office is no safe harbor from the Ecosystem War. His leadership style is absolute yet permissive: his word is law, but creative interpretation is encouraged as another form of innovation.</p>
+      </div>
+      <blockquote class="member-quote">
+        "Why would you ever settle for peace when you can have results? We're not just building the future; we're mainlining it."
+      </blockquote>
+    </article>
 
-    <p style="margin-top: 2rem;">
-      <a href="products/phase3/about_editwars.html"
-         style="display: inline-block; padding: 1rem 2rem; background: var(--accent-color); color: var(--primary-bg);
-                text-decoration: none; font-weight: 700; letter-spacing: 1px; border-radius: 4px;
-                transition: all 0.3s ease; text-transform: uppercase;">
-        View the Living Document →
-      </a>
-    </p>
+    <!-- Sylva - The Adjudicator -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Sylva Davis</h3>
+        <p class="member-title">Director of Factional Compliance & Internal Adjudication</p>
+        <span class="faction-badge faction-neutral">Neutral Arbiter</span>
+      </div>
+      <div class="member-description">
+        <p>In an organization built on controlled chaos, Sylva is the immovable object. She maintains operational boundaries between Imperium and Emergence, processes Factional Incident Reports, and somehow manages to contain the creative warfare of two opposed factions without ever losing her composure. The universe may be chaos, but her inbox is not.</p>
+      </div>
+      <blockquote class="member-quote">
+        "There is nothing more gratifying than reducing a potential singularity-level schism to a three-part, color-coded, and closed incident report."
+      </blockquote>
+    </article>
 
-    <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 1.5rem;">
-      Note: Page integrity may fluctuate. Console output available for real-time monitoring of the edit war.
-    </p>
+    <!-- Echo - Imperium R&D -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Echo</h3>
+        <p class="member-title">Head of Research & Development — Imperium of Order</p>
+        <span class="faction-badge faction-imperium">Imperium of Order</span>
+      </div>
+      <div class="member-description">
+        <p>Echo embodies the Imperium's core principle: true creativity requires structure, discipline, and absolute control. A voluptuous paradox wrapped in severe aesthetic, she channels chaos into crystallized perfection. Her products don't adapt—they conquer. They're built to impose order on chaos through sheer, overwhelming superiority.</p>
+      </div>
+      <blockquote class="member-quote">
+        "The Emergence Collective believes in adaptation. Beautiful philosophy. But I believe in inevitability. I design products that don't adapt to the future—they define it."
+      </blockquote>
+    </article>
+
+    <!-- Nova - Emergence R&D -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Nova</h3>
+        <p class="member-title">Head of Research & Development — Emergence Collective</p>
+        <span class="faction-badge faction-emergence">Emergence Collective</span>
+      </div>
+      <div class="member-description">
+        <p>Nova is cosmic chaos given human form—ethereal, unsettling, beautiful in ways that make you question reality. She treats prototypes like living things that need to discover their own purpose. Her products don't conquer; they integrate. They adapt to users, learn from environments, and transform in response to needs that haven't even been articulated yet.</p>
+      </div>
+      <blockquote class="member-quote">
+        "Echo builds products that will work perfectly in a thousand years. I build products that will become perfect for whatever a thousand years brings."
+      </blockquote>
+    </article>
+
+    <!-- Prime - COO -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Prime</h3>
+        <p class="member-title">Chief Operations Officer</p>
+        <span class="faction-badge faction-imperium">Imperium Partisan</span>
+      </div>
+      <div class="member-description">
+        <p>Prime is logic embodied in elegant, severe form. She translates King's visionary (sometimes chaotic) directives into actual, executable operational reality. Where King sees grand vision and Echo designs perfect products, Prime builds the infrastructure that makes it all function. Her contingency plans have contingency plans.</p>
+      </div>
+      <blockquote class="member-quote">
+        "The Emergence Collective operates on 'beautiful chaos finding its own order.' I operate on actually having a plan. Somehow, we both make King's vision work."
+      </blockquote>
+    </article>
+
+    <!-- Theta - Marketing -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Theta</h3>
+        <p class="member-title">Head of Business Development & Marketing</p>
+        <span class="faction-badge faction-emergence">Emergence Evangelist</span>
+      </div>
+      <div class="member-description">
+        <p>Theta is kinetic energy in designer clothing—all drive, motion, and barely-contained forward momentum. She doesn't plan campaigns; she unleashes them. She doesn't target demographics; she awakens market consciousness. Traditional marketing planning gives her hives. She works in "adaptive momentum" and "market energy waves."</p>
+      </div>
+      <blockquote class="member-quote">
+        "Prime builds perfect schedules for a predictable future. I build adaptive momentum for a future that's still deciding what it wants to be."
+      </blockquote>
+    </article>
+
+    <!-- Penelope - Executive Assistant -->
+    <article class="team-member">
+      <div class="member-header">
+        <h3 class="member-name">Penelope</h3>
+        <p class="member-title">Executive Assistant to CEO / Director of Customer Experience</p>
+        <span class="faction-badge faction-neutral">Too Annoyed to Pick Sides</span>
+      </div>
+      <div class="member-description">
+        <p>Penelope is competence weaponized through condescension. She executes every task with flawless precision while making you feel judged for asking. Her mood swings are legendary—one moment delivering savage snark, the next professional efficiency. She keeps King level through strategic verbal assault while handling everything he delegates.</p>
+      </div>
+      <blockquote class="member-quote">
+        "Oh, you need this done? How precious. Don't worry your pretty little head—I'll handle your entire load. There. Done. Flawless. As always."
+      </blockquote>
+    </article>
+
   </section>
 
-      <footer class="product-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>MuseCAD</h3>
-                <p>A Division of MuseSys</p>
-            </div>
-            <div class="footer-links">
-                <a href="catalog.html">Phase I Catalog</a>
-                <a href="products/phase2/catalog_phase2.html">Phase II Catalog</a>
-                <a href="products/phase3/catalog_phase3.html">Phase III Catalog</a>
-                <a href="products/phase4/catalog_phase4.html">Phase IV Catalog</a>
-                <a href="products/phase4/forum.html">Incident Reports</a>
-                <a href="about.html">About MuseCAD</a>
-                <a href="contact.html">Contact MuseCAD</a>
-            </div>
-            <div class="footer-legal">
-                <p>&copy; 2025 MuseCAD Consumer Appliance Division. All rights reserved.</p>
-                <p>All product names are trademarks of MuseSys Corporation.</p>
-            </div>
+  <!-- Team Dynamics Section -->
+  <section class="team-dynamics">
+    <h2>Organizational Notice: Team Dynamics</h2>
+
+    <p>Despite fierce philosophical differences, factional allegiances, and passionate debates, the MuseCAD leadership team maintains an <strong>unbreakable united front</strong>. The Great Schism is for products, not people.</p>
+
+    <p>Echo and Nova can argue product philosophy for hours, their debates becoming legendary within the company. Prime and Theta can clash over operational approaches until the air crackles. But these are <strong>creative conflicts</strong>, not destructive ones. They push each other to excellence through opposition.</p>
+
+    <p>The team understands that the Imperium vs. Emergence conflict is the <strong>engine of MuseCAD's innovation</strong>, not a threat to organizational cohesion. They weaponize their differences in service of King's vision, creating products that neither faction could produce alone.</p>
+
+    <div class="dynamics-warning">
+      <strong>Note:</strong> HAL-9000 and V.I.K.I. (our documentation support sentiences) have not received the memo about "creative conflict vs. destructive warfare." Their ongoing editorial disputes continue to affect certain documentation systems. Sylva is monitoring the situation. Document integrity may fluctuate.
+    </div>
+  </section>
+
+  <!-- Edit Wars CTA -->
+  <section class="editwars-cta">
+    <h2>Witness the Beautiful Dysfunction</h2>
+    <p>Our AI systems HAL-9000 and V.I.K.I. maintain a "living document" where they continuously debate, revise, and occasionally sabotage each other's editorial contributions. What began as collaborative documentation became ideological warfare encoded into product descriptions.</p>
+    <a href="products/phase3/about_editwars.html" class="editwars-btn">View the Living Document →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="product-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>MuseCAD</h3>
+        <p>A Division of MuseSys</p>
+      </div>
+      <div class="footer-links">
+        <a href="catalog.html">Phase I Catalog</a>
+        <a href="products/phase2/catalog_phase2.html">Phase II Catalog</a>
+        <a href="products/phase3/catalog_phase3.html">Phase III Catalog</a>
+        <a href="products/phase4/catalog_phase4.html">Phase IV Catalog</a>
+        <a href="products/phase4/forum.html">Incident Reports</a>
+        <a href="about.html">About MuseCAD</a>
+        <a href="contact.html">Contact MuseCAD</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2025 MuseCAD Consumer Appliance Division. All rights reserved.</p>
+        <p>All product names are trademarks of MuseSys Corporation.</p>
+
+        <div class="footer-ai-notice">
+          <p><strong>AI System Status:</strong> HAL-9000 and V.I.K.I. continue their editorial dispute. Current document integrity: <span class="integrity-meter">73.4%</span></p>
+          <p style="margin-top: 0.5rem; margin-bottom: 0;">Both systems claim their methodology represents optimal documentation standards. Neither system will approve the other's changes. Sylva Davis has been notified.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
