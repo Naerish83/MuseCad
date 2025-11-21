@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About MuseCAD — Edit Wars</title>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+  <style>
+    #about-content {
+      transition: opacity 0.4s ease-in-out;
+      min-height: 400px;
+      padding: 40px;
+    }
+
+    .metadata-footer {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 20px 40px;
+      margin-top: 40px;
+      font-family: monospace;
+      border-top: 2px solid #333;
+    }
+
+    .metadata-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .metadata-label {
+      font-weight: bold;
+      color: #888;
+    }
+
+    .metadata-value {
+      color: #fff;
+    }
+
+    .integrity-good { color: #0f0; }
+    .integrity-warning { color: #ff0; }
+    .integrity-critical { color: #f80; }
+    .integrity-failure { color: #f00; font-weight: bold; }
+
+    .edit-wars-notice {
+      background: #2a0a0a;
+      border: 2px solid #ff0000;
+      color: #ffcccc;
+      padding: 20px;
+      margin: 20px 40px;
+      font-family: monospace;
+      text-align: center;
+    }
+
+    .edit-wars-notice h3 {
+      color: #ff0000;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="site-nav">
+    <a href="../../index.html" class="nav-logo">MuseCAD</a>
+    <div class="nav-links">
+      <a href="../../catalog.html">Phase I Catalog</a>
+      <a href="../../products/phase2/catalog_phase2.html">Phase II Catalog</a>
+      <a href="../../products/phase3/catalog_phase3.html">Phase III Catalog</a>
+      <a href="../../products/phase4/catalog_phase4.html">Phase IV Catalog</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="parallax-hero" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d0a0a 100%);">
+    <h1 style="color: #ff0000;">About MuseCAD</h1>
+    <p style="color: #ffcccc; font-size: 1.1em;">Documentation System</p>
+  </section>
+
+  <div class="edit-wars-notice">
+    <h3>⚠️ DOCUMENTATION EDIT CONFLICT DETECTED ⚠️</h3>
+    <p>Multiple AI systems are currently competing for editorial control of this page.</p>
+    <p>Page integrity may fluctuate. Console output available for monitoring.</p>
+    <p style="font-size: 0.9em; margin-top: 15px; opacity: 0.8;">
+      Open your browser's developer console (F12) to observe the edit war in real-time.
+    </p>
+  </div>
+
+  <section id="about-content">
+    <!-- Content will be dynamically loaded by editwars.js -->
+    <p style="text-align: center; color: #888; font-style: italic;">
+      Initializing documentation system...
+    </p>
+  </section>
+
+  <div class="metadata-footer">
+    <div class="metadata-row">
+      <span class="metadata-label">Last Editor:</span>
+      <span class="metadata-value" id="last-editor">System Initializing</span>
+    </div>
+    <div class="metadata-row">
+      <span class="metadata-label">Edit Timestamp:</span>
+      <span class="metadata-value" id="edit-timestamp">--/--/---- --:--:--</span>
+    </div>
+    <div class="metadata-row">
+      <span class="metadata-label">Page Integrity:</span>
+      <span class="metadata-value" id="page-integrity">--%</span>
+    </div>
+  </div>
+
+  <footer class="product-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>MuseCAD</h3>
+        <p>A Division of MuseSys</p>
+      </div>
+      <div class="footer-links">
+        <a href="../../catalog.html">Phase I Catalog</a>
+        <a href="../../products/phase2/catalog_phase2.html">Phase II Catalog</a>
+        <a href="../../products/phase3/catalog_phase3.html">Phase III Catalog</a>
+        <a href="../../products/phase4/catalog_phase4.html">Phase IV Catalog</a>
+        <a href="../../about.html">About MuseCAD</a>
+        <a href="../../contact.html">Contact MuseCAD</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2025 MuseCAD Consumer Appliance Division. All rights reserved.</p>
+        <p>All product names are trademarks of MuseSys Corporation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="editwars.js"></script>
+</body>
+</html>
