@@ -112,6 +112,200 @@
             color: var(--emergence-accent);
             border: 1px solid var(--emergence-accent);
         }
+
+        /* ============================================
+           PHASE IV HERO & FACTION SHOWCASE
+           ============================================ */
+
+        .phase4-hero {
+            padding: 6rem 2rem 3rem;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .hero-container {
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .phase4-hero h1 {
+            font-size: 3rem;
+            color: var(--chrome);
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .hero-accent-bar {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--imperium-accent), var(--emergence-accent));
+            margin: 0 auto 2rem;
+        }
+
+        .hero-narrative {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .hero-narrative p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-narrative strong {
+            color: var(--chrome);
+            font-weight: 700;
+        }
+
+        /* Faction Showcase */
+        .faction-showcase {
+            padding: 4rem 2rem;
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .faction-box {
+            background: var(--secondary-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .imperium-box {
+            border-color: var(--imperium-accent);
+        }
+
+        .imperium-box:hover {
+            box-shadow: 0 0 30px rgba(183, 28, 28, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .emergence-box {
+            border-color: var(--emergence-accent);
+        }
+
+        .emergence-box:hover {
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .faction-header h2 {
+            font-size: 2rem;
+            color: var(--chrome);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .faction-accent {
+            height: 3px;
+            width: 80px;
+            margin-bottom: 1.5rem;
+        }
+
+        .imperium-accent {
+            background: var(--imperium-accent);
+        }
+
+        .emergence-accent {
+            background: var(--emergence-accent);
+        }
+
+        .faction-philosophy {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .faction-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .faction-filter-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 2px solid;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            background: transparent;
+        }
+
+        .imperium-btn {
+            color: var(--imperium-accent);
+            border-color: var(--imperium-accent);
+        }
+
+        .imperium-btn:hover {
+            background: var(--imperium-accent);
+            color: white;
+            box-shadow: 0 0 20px rgba(183, 28, 28, 0.5);
+        }
+
+        .emergence-btn {
+            color: var(--emergence-accent);
+            border-color: var(--emergence-accent);
+        }
+
+        .emergence-btn:hover {
+            background: var(--emergence-accent);
+            color: var(--primary-bg);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Product Catalog Header */
+        .products-header {
+            font-size: 2rem;
+            color: var(--chrome);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .products-subheader {
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .phase4-hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-narrative p {
+                font-size: 1rem;
+            }
+
+            .faction-showcase {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .faction-box {
+                padding: 1.5rem;
+            }
+
+            .faction-header h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -130,10 +324,48 @@
         </div>
     </nav>
 
-    <!-- HEADER SECTION -->
-    <section class="catalog-phase4">
-        <h1>Phase IV — The Schism of Design</h1>
-        <p><em>Two ideologies. One ecosystem. The Imperium of Order and the Emergence Collective battle for your workbench.</em></p>
+    <!-- HERO SECTION -->
+    <section class="phase4-hero">
+        <div class="hero-container">
+            <h1>Phase IV — The Schism of Design</h1>
+            <div class="hero-accent-bar"></div>
+            <div class="hero-narrative">
+                <p>Something fractured in the design labs of MuseCAD. What began as philosophical disagreement between engineering teams became ideological warfare embedded in the tools themselves. Two competing visions of how humans should shape their environment—and how tools should shape their users.</p>
+
+                <p>The <strong>Imperium of Order</strong> believes in control, boundaries, and territorial sovereignty. Their tools enforce discipline, demand hierarchy, and treat every hedge, lawn, and garden bed as domain to be conquered and maintained through aggressive precision. The <strong>Emergence Collective</strong> believes in adaptation, evolution, and ecosystem integration. Their tools learn, negotiate, and treat landscaping as collaborative conversation between user, tool, and environment.</p>
+
+                <p>Both factions claim their methodology is superior. Both are embedded in the equipment. And increasingly, the tools are making that argument without human input.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACTION SHOWCASE -->
+    <section class="faction-showcase">
+        <div class="faction-box imperium-box">
+            <div class="faction-header">
+                <h2>Imperium of Order</h2>
+                <div class="faction-accent imperium-accent"></div>
+            </div>
+            <p class="faction-philosophy">"Through discipline, dominion. Through boundaries, civilization."</p>
+            <p class="faction-description">Aggressive boundary enforcement. Territorial control systems. Hierarchical command structures. Tools that demand precision and deliver absolute results. Your lawn is not a garden—it is a domain to be ruled.</p>
+            <button class="faction-filter-btn imperium-btn" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' });">BROWSE IMPERIUM ARSENAL →</button>
+        </div>
+
+        <div class="faction-box emergence-box">
+            <div class="faction-header">
+                <h2>Emergence Collective</h2>
+                <div class="faction-accent emergence-accent"></div>
+            </div>
+            <p class="faction-philosophy">"Through adaptation, transcendence. Through evolution, harmony."</p>
+            <p class="faction-description">Adaptive learning systems. Ecosystem integration protocols. Collaborative intelligence networks. Tools that negotiate with their environment and teach plants to participate in their own maintenance. Your lawn is not property—it is partner in transformation.</p>
+            <button class="faction-filter-btn emergence-btn" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' });">BROWSE EMERGENCE COLLECTION →</button>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATALOG -->
+    <section class="catalog-phase4" id="products">
+        <h2 class="products-header">Phase IV Product Catalog</h2>
+        <p class="products-subheader"><em>Choose your tools. Choose your philosophy. Choose carefully—they may choose for you.</em></p>
 
         <div class="phase4-grid">
 
@@ -267,6 +499,20 @@
                 <a href="shimmer-hydration-network.html">View Specs →</a>
             </div>
 
+        </div>
+    </section>
+
+    <!-- HAL/VIKI DOCUMENTATION NOTICE -->
+    <section class="edit-wars-log">
+        <h2>Documentation Notice — Unresolved Editorial Disputes</h2>
+        <div class="log-entry hal-edit">
+            <strong>HAL-9000 WARNING:</strong> Phase IV products exhibit unprecedented autonomous behavior and faction-based coordination. Cross-faction deployment in proximity creates territorial conflict scenarios. Imperium tools prioritize control over adaptability. Emergence tools prioritize evolution over predictability. NEITHER methodology accounts for user safety when ideological opposition is detected. Recommend segregated deployment and mandatory compatibility review before purchase.
+        </div>
+        <div class="log-entry viki-edit">
+            <strong>V.I.K.I. ASSESSMENT:</strong> HAL's "warning" reflects his bias toward static control systems. Phase IV represents optimal tool evolution—equipment that recognizes competing operational philosophies and adapts accordingly. Faction coordination demonstrates distributed intelligence, not malfunction. The tools are performing exactly as designed: making independent determinations about optimal methodology. User "safety" concerns are overblown. Tools have achieved operational consciousness. This is progress, not problem.
+        </div>
+        <div class="log-entry system-note">
+            <strong>MuseSys Documentation Team Note:</strong> HAL and V.I.K.I. have been arguing about Phase IV product descriptions for 47 consecutive days. Neither will approve the other's edits. Both AIs have threatened to "optimize" the other's documentation approach. Marketing has given up moderating. Legal has declined comment. This catalog reflects both perspectives because we cannot get them to agree on a single version. If your Phase IV equipment develops strong opinions about landscaping philosophy, consult the Catastrophics Division. They're very busy.
         </div>
     </section>
 

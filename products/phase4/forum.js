@@ -41,14 +41,15 @@ function setupEventListeners() {
     document.getElementById('factionFilter').addEventListener('change', applyFilters);
     document.getElementById('statusFilter').addEventListener('change', applyFilters);
     document.getElementById('searchInput').addEventListener('input', applyFilters);
-    
-    // Submit button
+
+    // Submit buttons
     document.getElementById('submitBtn').addEventListener('click', openSubmissionForm);
-    
+    document.getElementById('reportIncidentBtn').addEventListener('click', openSubmissionForm);
+
     // Modal close buttons
     document.getElementById('modalClose').addEventListener('click', () => closeModal('incidentModal'));
     document.getElementById('submissionClose').addEventListener('click', () => closeModal('submissionModal'));
-    
+
     // Click outside modal to close
     document.getElementById('incidentModal').addEventListener('click', (e) => {
         if (e.target.id === 'incidentModal') closeModal('incidentModal');
@@ -56,9 +57,17 @@ function setupEventListeners() {
     document.getElementById('submissionModal').addEventListener('click', (e) => {
         if (e.target.id === 'submissionModal') closeModal('submissionModal');
     });
-    
+
     // Submission form
     document.getElementById('incidentForm').addEventListener('submit', handleSubmission);
+}
+
+// Open featured incident (Willowbrook #012)
+function openFeaturedIncident() {
+    const willowbrookIncident = allIncidents.find(i => i.id === '012');
+    if (willowbrookIncident) {
+        openIncidentModal(willowbrookIncident);
+    }
 }
 
 // Render incidents

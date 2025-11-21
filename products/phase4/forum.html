@@ -21,6 +21,15 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav">
+        <a href="../../index.html">Home</a>
+        <span class="breadcrumb-separator">></span>
+        <a href="catalog_phase4.html">Phase IV</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">Support Forum</span>
+    </div>
+
     <!-- Portal Header -->
     <header class="portal-header">
         <div class="header-content">
@@ -34,7 +43,22 @@
         </div>
     </header>
 
-    <!-- Filters -->
+    <!-- Featured Incident Highlight -->
+    <section class="featured-incident">
+        <div class="featured-container">
+            <div class="featured-badge">FEATURED INCIDENT</div>
+            <h2>The Battle of Willowbrook Estates</h2>
+            <p class="featured-summary">HOA apocalypse in Scottsdale, AZ. What started as a property line dispute escalated into full faction warfare when 28 homeowners deployed competing Phase IV equipment. Central resident activated Crown Protocol, creating sovereign neutral zone with catastrophic side effects. Field expanding. User may no longer be in control.</p>
+            <div class="featured-meta">
+                <span class="featured-incident-id">INCIDENT #012</span>
+                <span class="featured-status">STATUS: CASE OPEN</span>
+                <span class="featured-tier">TIER: HOA APOCALYPSE</span>
+            </div>
+            <button class="featured-btn" onclick="openFeaturedIncident()">VIEW FULL DOCUMENTATION →</button>
+        </div>
+    </section>
+
+    <!-- Filters & Report Button -->
     <section class="filters-section">
         <div class="filters-container">
             <div class="filter-group">
@@ -47,7 +71,7 @@
                     <option value="HOA_APOCALYPSE">HOA Apocalypse</option>
                 </select>
             </div>
-            
+
             <div class="filter-group">
                 <label>Faction:</label>
                 <select id="factionFilter" class="filter-select">
@@ -58,7 +82,7 @@
                     <option value="NEUTRAL">Neutral</option>
                 </select>
             </div>
-            
+
             <div class="filter-group">
                 <label>Status:</label>
                 <select id="statusFilter" class="filter-select">
@@ -70,9 +94,16 @@
                     <option value="CASE_OPEN">Case Open</option>
                 </select>
             </div>
-            
+
             <div class="filter-group search-group">
                 <input type="text" id="searchInput" class="search-input" placeholder="Search incidents...">
+            </div>
+
+            <div class="filter-group report-group">
+                <button class="report-incident-btn" id="reportIncidentBtn">
+                    <span class="report-icon">⚠️</span>
+                    <span>REPORT NEW INCIDENT</span>
+                </button>
             </div>
         </div>
     </section>
